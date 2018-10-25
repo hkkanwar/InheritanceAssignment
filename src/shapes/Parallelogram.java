@@ -20,11 +20,13 @@ this.height = height;
 }
 
 // Returns the area of this parallelogram.
+ @Override
 public double area() {
 return base * height;
 }
 
 // Returns the perimeter of this parallelogram.
+ @Override
 public double perimeter() {
 return 2.0 * (base + height);
 }

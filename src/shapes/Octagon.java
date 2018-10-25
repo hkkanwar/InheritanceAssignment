@@ -17,11 +17,13 @@ public class Octagon implements ShapeInterface {
     }
 
 // Returns the area of this octagon.
+    @Override
     public double area() {
     return 2.0 * (1 + Math.sqrt(2)) * side * side;
     }
 
 // Returns the perimeter of this rectangle.
+     @Override
     public double perimeter() {
     return 8.0 * side;
     }

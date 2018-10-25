@@ -21,11 +21,14 @@ this.b = b;
 this.c = c;
 }
 // Returns a triangle's area using Heron's formula.
+ @Override
 public double area() {
 double s = (a + b + c) / 2.0;
 return Math.sqrt(s * (s-a)*(s-b)*(s-c));
 }
 // Returns the perimeter of the triangle.
+ @Override
+ 
 public double perimeter() {
 return a + b + c;
 }

@@ -17,12 +17,12 @@ public Circle(double radius) {
 this.radius = radius;
 }
 // Returns the area of the circle.
-
+@Override
 public double area() {
 return Math.PI * radius * radius;
 }
 // Returns the perimeter of the circle.
-
+@Override
 public double perimeter() {
 return 2.0 * Math.PI * radius;
 }

@@ -70,7 +70,6 @@ switch (type) {
 // helper function
 // overridding based on interface which is passed
 public static void printInfo(ShapeInterface s) {
-System.out.println("The shape: " + s);
 System.out.println("area : " + s.area());
 System.out.println("perim: " + s.perimeter());
 System.out.println();
