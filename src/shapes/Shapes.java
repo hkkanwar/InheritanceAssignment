@@ -4,6 +4,7 @@
  * and open the template in the e
  */
 package shapes;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 /**
  *
@@ -17,68 +18,84 @@ import java.util.Scanner;
     public static void main(String[] args) {
 System.out.print("Please choose a shape: Circle(1), Octogon (2), Parallelogram (3), Rectangle(4) or Triangle (5)");
 Scanner input = new Scanner (System.in);
-int type = input.nextInt();
-
+int type = 0;
+try{
+     type = input.nextInt();
      Circle circ;
      Triangle tri;
+     Rectangle rec;
+     Octagon oct;
+     Parallelogram parlg;
 
 switch (type) {
  case 1:
-   System.out.print("Please enter the radius of the circle: ");
-   double radius = input.nextDouble();
+    System.out.print("Please enter the radius of the circle: ");
+    double radius = input.nextDouble();
     circ = new Circle(radius);
-   printInfo(circ);
-   printInfo("the end");
+   printInfo(circ);   
    break;
 
  case 2:
-   System.out.print("Please enter the side length of the octogon: ");
+    System.out.print("Please enter the side length of the octogon: ");
     double side = input.nextDouble();
-   break;
+    oct = new Octagon(side);
+    printInfo(oct);    
+    break;
 
- case 3:
+ case 3:      
     System.out.print("Please enter the base of the parallelogram: ");
     double base = input.nextDouble();
     System.out.print("Please enter the height of the parallelogram: ");
     double height = input.nextDouble();
-   break;
+    parlg = new Parallelogram(base,height);
+    printInfo(parlg);
+     break;
 
  case 4:
-   System.out.print("Please enter the width of the rectangle: ");
+    System.out.print("Please enter the width of the rectangle: ");
     double width = input.nextDouble();
     System.out.print("Please enter the height of the rectangle: ");
     double h = input.nextDouble();
-   break;
+    rec = new Rectangle(width,h);
+    printInfo(rec);
+    break;
 
  case 5:
-  System.out.print("Please enter the length of side A of the triangle: ");
-    double a = input.nextDouble();
-    System.out.print("Please enter the length of side B of the triangle: ");
-    double b = input.nextDouble();
-    System.out.print("Please enter the length of side C of the triangle: ");
-    double c = input.nextDouble();
-     tri = new Triangle(a,b,c);
-     printInfo(tri);
-   break;
-
+       System.out.print("Please enter the length of side A of the triangle: ");    
+        double a =input.nextDouble();
+        System.out.print("Please enter the length of side B (base) of the triangle: ");
+        double b = input.nextDouble();
+        System.out.print("Please enter the length of side C of the triangle: ");
+        double c = input.nextDouble();
+        System.out.print("Please enter the length of the height of the triangle: ");
+        double ht = input.nextDouble();
+        tri = new Triangle(a,b,c, ht);
+        printInfo(tri);
+       break;
  default:
-   type = 0;
-    System.out.print("Invalid Shape");
+     
+    printInfo("Invalid input for shape");
  }
-  }
 
-// helper function
+ printInfo("The End");
+}
+catch (InputMismatchException e){
+       System.out.print(" You must enter valid input. Program exited");
+     }
+ }
+
+
 // overridding based on interface which is passed
 public static void printInfo(ShapeInterface s) {
-System.out.println("area : " + s.area());
-System.out.println("perim: " + s.perimeter());
+System.out.println("Area :" + s.area());
+System.out.println("Perimeter : " + s.perimeter());
 System.out.println();
 }
 
 //overloading 
 public static void printInfo(String s ){
-System.out.printf("%s",s);
-    }
+System.out.printf("%s%n",s);
+ }
 
 
 }
