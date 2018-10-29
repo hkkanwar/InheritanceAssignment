@@ -11,20 +11,21 @@ package shapes;
  * @author hkkanwar
  */
 public class Rectangle implements ShapeInterface {
-private double width, height;
+    private double width, height;
+
 // Constructs a new rectangle with the given dimensions.
 public Rectangle(double width, double height) {
-this.width = width;
-this.height = height;
+    this.width = width;
+    this.height = height;
 }
 // Returns the area of this rectangle.
  @Override
 public double area() {
-return width * height;
+    return width * height;
 }
 // Returns the perimeter of this rectangle.
  @Override
 public double perimeter() {
-return 2.0 * (width + height);
+    return 2.0 * (width + height);
 }
 }

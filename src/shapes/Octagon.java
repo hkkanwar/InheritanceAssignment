@@ -12,19 +12,20 @@ package shapes;
  */
 public class Octagon implements ShapeInterface {
     double side;
-    public Octagon (double side) {
-    this.side = side;
+    
+public Octagon (double side) {
+        this.side = side;
     }
 
 // Returns the area of this octagon.
-    @Override
-    public double area() {
+@Override
+public double area() {
     return 2.0 * (1 + Math.sqrt(2)) * side * side;
     }
 
 // Returns the perimeter of this rectangle.
-     @Override
-    public double perimeter() {
+@Override
+public double perimeter() {
     return 8.0 * side;
     }
 }

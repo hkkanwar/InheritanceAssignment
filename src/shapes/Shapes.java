@@ -16,19 +16,23 @@ import java.util.Scanner;
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-System.out.print("Please choose a shape: Circle(1), Octogon (2), Parallelogram (3), Rectangle(4) or Triangle (5)");
-Scanner input = new Scanner (System.in);
-int type = 0;
-try{
-     type = input.nextInt();
-     Circle circ;
-     Triangle tri;
-     Rectangle rec;
-     Octagon oct;
-     Parallelogram parlg;
-
+        //get user input
+    System.out.print("Please choose a shape: Circle(1), Octogon (2), Parallelogram (3), Rectangle(4) or Triangle (5)");
+    Scanner input = new Scanner (System.in);
+    int type = 0;
+    
+    try{
+        type = input.nextInt();
+        Circle circ;
+        Triangle tri;
+        Rectangle rec;
+        Octagon oct;
+        Parallelogram parlg;
+        
+    //call specific class depending on input of user
 switch (type) {
  case 1:
+    //get input of data required for calculations
     System.out.print("Please enter the radius of the circle: ");
     double radius = input.nextDouble();
     circ = new Circle(radius);
@@ -73,14 +77,15 @@ switch (type) {
         printInfo(tri);
        break;
  default:
-     
+     //if no acceptable integer value is entered 
     printInfo("Invalid input for shape");
  }
 
- printInfo("The End");
+    printInfo("The End");
 }
+//error handling
 catch (InputMismatchException e){
-       System.out.print(" You must enter valid input. Program exited");
+       System.out.println(" You must enter valid input. Program exited");
      }
  }
 
@@ -94,7 +99,7 @@ System.out.println();
 
 //overloading 
 public static void printInfo(String s ){
-System.out.printf("%s%n",s);
+System.out.printf("%15s",s);
  }
 
 

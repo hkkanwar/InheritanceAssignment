@@ -15,19 +15,19 @@ private double base, height;
 
 // Constructs a new rectangle with the given dimensions.
 public Parallelogram (double base, double height) {
-this.base = base;
-this.height = height;
+    this.base = base;
+    this.height = height;
 }
 
 // Returns the area of this parallelogram.
  @Override
 public double area() {
-return base * height;
+    return base * height;
 }
 
 // Returns the perimeter of this parallelogram.
  @Override
 public double perimeter() {
-return 2.0 * (base + height);
+    return 2.0 * (base + height);
 }
 }

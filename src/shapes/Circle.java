@@ -12,18 +12,19 @@ package shapes;
  */
 public class Circle implements ShapeInterface {
 private double radius;
+
 // Constructs a new circle with the given radius.
 public Circle(double radius) {
-this.radius = radius;
+    this.radius = radius;
 }
 // Returns the area of the circle.
 @Override
 public double area() {
-return Math.PI * radius * radius;
+    return Math.PI * radius * radius;
 }
 // Returns the perimeter of the circle.
 @Override
 public double perimeter() {
-return 2.0 * Math.PI * radius;
+    return 2.0 * Math.PI * radius;
 }
 }
